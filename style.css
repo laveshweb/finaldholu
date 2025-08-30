@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden; 
+}
+
+nav {
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 1;
+  height: 80px;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 70px;
+  width: auto;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+    margin-left: 2rem;
+}
+nav ul li {
+  margin-left: 2rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+nav ul li a:hover{
+  height: 20px;
+  width: 100%;
+background-color: #cc9d31;
+color: #cc9d31;
+
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1.8px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  height: 100vh;
+  padding: 30% 0;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+.active {
+  left: 0%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+  
+}
+.menubar ul li {
+margin-bottom: 20px;
+    border: 1px solid black;
+  
+      
+        width: 100%;
+        border-radius: 25px;
+        display: flex;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 3; */
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 15px  60px;
+  border-radius: 5px;
+
+
+
+}
+
+
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+.menubar ul li a{
+    font-size: 0.9rem;
+  }
+  nav .logo img{
+    height: 50px;
+  }
+
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+
+  display: flex;
+  flex-direction: column; /* Always keep column layout */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  
+
+}
+
+.header {
+
+  max-width: 800px;
+  height: auto;
+
+  transition: width 0.3s ease;
+}
+
+
+.home p {
+  max-width: 800px;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  margin: 20px 0; /* Yeh spacing control karega */
+  position: static; /* reset */
+    font-family: "Cardo", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.home button {
+  background-color: #000;
+  color: white;
+  padding: 20px 60px;
+  font-size: 18px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* button ko p se thoda door karo */
+   /* jitna upar chahiye utna adjust karna */
+
+}
+
+.home{
+  
+  }
+
+/* Increase image size for bigger screens */
+@media screen and (min-width: 1024px) {
+  .header {
+    max-width: 1200px;
+  }
+   .home p{
+   padding: 0px 18px;
+position: relative;
+bottom: 100px;
+font-size: 1.3rem;
+width: 100%;
+  }
+  .home button{
+    padding:  20px 40px;
+    font-size: 1rem;
+letter-spacing: 0.2rem;
+    font-weight: 400;
+    margin-bottom: 60px;
+   position: relative;
+  bottom: 50px; /* jitna upar le jaana hai */
+  margin-top: 0;
+ 
+  }
+}
+@media screen and   (max-width: 1024px) {
+  .home{
+   
+  }
+  .header{
+    width: 120vw;
+    position: relative;
+    bottom: 50px;
+  }
+  .home p{
+      padding: 0px 18px;
+position: relative;
+bottom: 100px;
+font-size: 1rem;
+  }
+  .home button{
+   
+       padding:  15px 40px;
+    font-size: 0.8rem;
+    position: relative;
+  bottom: 50px; /* jitna upar le jaana hai */
+  margin-top: 0;
+ 
+
+  }
+
+}
